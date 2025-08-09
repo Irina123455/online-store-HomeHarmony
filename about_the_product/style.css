@@ -1,0 +1,953 @@
+body {
+    background-color: rgb(243, 235, 220);
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: #A68B64;
+    font-size: 28px;
+}
+
+p {
+    color: #4A4A4A;
+    font-size: 16px;
+}
+
+button {
+    background: #E0CBA8;
+    color: #A68B64;
+    width: 245px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer; 
+}
+
+button:hover {
+    background: #D0BBA0; 
+    color: #866B44;   
+}
+
+/* Адаптация для 1200px */
+@media (max-width: 1200px) {
+    h1, h2, h3 {
+        font-size: 26px; /* Уменьшение размера заголовков */
+    }
+
+    p {
+        font-size: 15px; /* Уменьшение размера текста */
+    }
+
+    button {
+        width: 220px; /* Уменьшение ширины кнопки */
+        font-size: 15px; /* Уменьшение размера шрифта кнопки */
+    }
+}
+
+/* Адаптация для 1024px */
+@media (max-width: 1024px) {
+    h1, h2, h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        width: 200px;
+        font-size: 14px;
+    }
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    button {
+        width: 160px;
+        font-size: 13px;
+        height: 35px; /* Уменьшение высоты кнопки */
+    }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    button {
+        width: 140px;
+        font-size: 12px;
+        height: 30px; /* Уменьшение высоты кнопки */
+    }
+}
+
+/* Адаптация для 320px */
+@media (max-width: 320px) {
+    h1, h2, h3 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 11px;
+    }
+
+    button {
+        width: 120px;
+        font-size: 11px;
+        height: 28px; /* Уменьшение высоты кнопки */
+    }
+}
+
+
+
+header {
+    padding: 60px 40px 10px;
+    position: relative;
+    overflow: visible; 
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    top: 0; /* Прикрепляем к верху экрана */
+    left: 0; /* Прикрепляем к левому краю экрана */
+    width: 100%; /* Навигация занимает всю ширину экрана */
+    height: 50px;
+    background-color: #fff; /* Задаем фон для навигации (непрозрачный) */
+    z-index: 100; /* Устанавливаем высокий z-index, чтобы навигация была поверх всего контента */
+    padding: 10px 20px; /* Добавляем отступы сверху и снизу, слева и справа */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень для визуального выделения */
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+}
+
+nav .menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0 80px;
+    margin: 0;
+    justify-content: space-between;
+}
+
+nav .menu ul li a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #A68B64;
+    display: block;
+}
+
+nav .menu ul li a:hover {
+    color: #866B44;
+}
+
+nav .nav-button {
+    display: flex;
+    align-items: center;
+    padding-left: 340px;
+}
+
+nav .nav-button img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+nav .nav-button button {
+    width: 180px;
+}
+nav .menu h3 { 
+    font-size: 20px;
+}
+.menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+display: none; /* Скрываем меню по умолчанию */
+    }
+
+    .menu ul.active {
+        display: block; /* Показываем меню при добавлении класса active */
+    }
+
+nav .menu ul.hidden {
+    display: none; 
+}
+
+.burger-menu {
+    display: none; 
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #A68B64;
+    margin: 5px 0;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+/* Адаптация для 1200px */
+@media (max-width: 1200px) {
+    nav .menu ul {
+        padding: 0 40px; /* Уменьшаем отступы */
+    }
+
+    nav .nav-button {
+        padding-left: 200px; /* Уменьшаем отступ для кнопки */
+    }
+
+    nav .menu h3 {
+        font-size: 18px; /* Уменьшаем размер заголовка */
+    }
+}
+
+/* Адаптация для 1024px */
+@media (max-width: 1024px) {
+    nav .menu ul {
+        padding: 0 20px; /* Уменьшаем отступы */
+        justify-content: center; /* Центрируем элементы меню */
+    }
+
+    nav .nav-button {
+        padding-left: 150px; /* Уменьшаем отступ для кнопки */
+    }
+
+    nav .menu h3 {
+        font-size: 16px; /* Уменьшаем размер заголовка */
+    }
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    nav .menu ul {
+        flex-direction: column; /* Меню становится вертикальным */
+        padding: 0; /* Убираем отступы */
+        align-items: center; /* Центрируем элементы меню */
+        position: absolute; /* Абсолютное позиционирование для выпадающего меню */
+        top: 50px; /* Сдвигаем вниз под навигацию */
+        left: 0; 
+        right: 0; 
+        background-color: #fff; /* Фон для выпадающего меню */
+        z-index: -1; /* Помещаем под другие элементы */
+        display: none; /* Скрываем по умолчанию */
+    }
+
+    nav .burger-menu {
+        display: block; /* Показываем бургер-меню */
+        margin-left: auto; /* Выравниваем бургер в конце навигации */
+        padding-right: 20px; /* Отступ справа */
+    }
+
+    nav .nav-button {
+        padding-left: 0; /* Убираем отступ для кнопки */
+        margin-left: auto; /* Выравниваем кнопку вправо */
+    }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+    nav .menu h3 {
+        font-size: 14px; /* Уменьшаем размер заголовка */
+    }
+
+    nav .nav-button button {
+        width: 150px; /* Уменьшаем ширину кнопки */
+    }
+
+    nav .burger-menu .bar {
+        width: 20px; /* Уменьшаем ширину полосок бургер-меню */
+        height: 2px; /* Уменьшаем высоту полосок бургер-меню */
+    }
+}
+
+/* Адаптация для 320px */
+@media (max-width: 320px) {
+    nav .menu h3 {
+        font-size: 12px; /* Уменьшаем размер заголовка */
+    }
+
+    nav .nav-button button {
+        width: 120px; /* Уменьшаем ширину кнопки */
+    }
+
+    nav .burger-menu .bar {
+        width: 15px; /* Уменьшаем ширину полосок бургер-меню */
+        height: 2px; /* Уменьшаем высоту полосок бургер-меню */
+    }
+}
+
+
+
+
+.product-detail-wrapper {
+    width: 100%;
+    max-width: auto; 
+    padding: 50px 40px;
+    box-sizing: border-box; 
+}
+
+.back-link {
+    display: inline-flex;
+    color: #A68B64; 
+    align-items: center; 
+    gap: 8px; 
+    text-decoration: none;
+    font-size: 1.1em; 
+    font-weight: 500; 
+    margin-bottom: 30px;
+    padding: 8px 12px; 
+    transition: all 0.3s ease; 
+}
+
+.back-link:hover {
+    background: #E0CBA8; 
+    color: #866B44;   
+    transform: translateX(-3px); 
+}
+
+.back-link i {
+    font-size: 1.3em;
+    line-height: 1; 
+}
+/* Адаптация для 1200px */
+@media (max-width: 1200px) {
+    .product-detail-wrapper {
+        padding: 40px 30px; /* Уменьшаем отступы */
+    }
+
+    .back-link {
+        font-size: 1.05em; /* Уменьшаем размер шрифта */
+        padding: 6px 10px; /* Уменьшаем отступы */
+    }
+}
+
+/* Адаптация для 1024px */
+@media (max-width: 1024px) {
+    .product-detail-wrapper {
+        padding: 30px 20px; /* Уменьшаем отступы */
+    }
+
+    .back-link {
+        font-size: 1em; /* Уменьшаем размер шрифта */
+        padding: 5px 8px; /* Уменьшаем отступы */
+        margin-bottom: 20px; /* Уменьшаем нижний отступ */
+    }
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    .product-detail-wrapper {
+        padding: 20px 15px; /* Уменьшаем отступы */
+    }
+
+    .back-link {
+        font-size: 0.9em; /* Уменьшаем размер шрифта */
+        padding: 4px 6px; /* Уменьшаем отступы */
+        margin-bottom: 15px; /* Уменьшаем нижний отступ */
+    }
+
+    .back-link i {
+        font-size: 1.2em; /* Уменьшаем размер иконки */
+    }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+    .product-detail-wrapper {
+        padding: 15px 10px; /* Уменьшаем отступы */
+    }
+
+    .back-link {
+        font-size: 0.8em; /* Уменьшаем размер шрифта */
+        padding: 3px 5px; /* Уменьшаем отступы */
+        margin-bottom: 10px; /* Уменьшаем нижний отступ */
+    }
+
+    .back-link i {
+        font-size: 1.1em; /* Уменьшаем размер иконки */
+    }
+}
+
+/* Адаптация для 320px */
+@media (max-width: 320px) {
+    .product-detail-wrapper {
+        padding: 10px; /* Минимальные отступы */
+    }
+
+    .back-link {
+        font-size: 0.7em; /* Уменьшаем размер шрифта */
+        padding: 2px 4px; /* Уменьшаем отступы */
+        margin-bottom: 5px; /* Уменьшаем нижний отступ */
+    }
+
+    .back-link i {
+        font-size: 1em; /* Уменьшаем размер иконки */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.container {
+    background-color: #fff; 
+    padding: 50px; 
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 40px; 
+    flex-direction: row;
+    text-align: justify;
+    align-items: center;
+    flex-wrap: nowrap; 
+}
+
+.container img {
+    width: 45%;
+    max-width: 400px;
+    height: auto; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    flex-shrink: 0; 
+}
+
+.content {
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%; /* Занимает всю высоту родителя, чтобы push-нуть кнопку вниз */
+    min-height: 300px; /* Минимальная высота для контента, чтобы кнопка не прилипала */
+}
+
+/* Стили для текстовой части (заголовок и описание) */
+.content-text {
+    margin-bottom: 25px; /* Отступ под описанием */
+    align-items: start;
+
+}
+.content-text p{
+    font-size: 20px;
+}
+/* Стили для блока с ценой и кнопкой */
+.content-button {
+    display: flex; /* Flexbox для цены и кнопки */
+    align-items: flex-end; /* Выравниваем по центру по вертикали */
+    gap: 30px; /* Расстояние между ценой и кнопкой */
+    margin-top: auto; /* Прижимает этот блок к низу .content */
+    padding-top: 25px; /* Отступ сверху */
+    border-top: 1px solid #eee; /* Разделительная линия */
+    flex-direction: column;
+}
+
+.content-button .price {
+    font-size: 2.2em; /* Размер цены */
+    font-weight: bold;
+    margin: 0; /* Убираем стандартные отступы */
+    white-space: nowrap; /* Запрещаем перенос строки для цены */
+}
+/* Адаптация для 1200px */
+@media (max-width: 1200px) {
+    .container {
+        padding: 40px; /* Уменьшаем отступы */
+        gap: 30px; /* Уменьшаем расстояние между элементами */
+    }
+    
+    .container img {
+        width: 50%; /* Увеличиваем ширину изображения */
+        max-width: 350px; /* Уменьшаем максимальную ширину изображения */
+    }
+
+    .content-text p {
+        font-size: 18px; /* Уменьшаем размер шрифта */
+    }
+
+    .content-button .price {
+        font-size: 2em; /* Уменьшаем размер шрифта цены */
+    }
+}
+
+/* Адаптация для 1024px */
+@media (max-width: 1024px) {
+    .container {
+        padding: 30px; /* Уменьшаем отступы */
+        gap: 20px; /* Уменьшаем расстояние между элементами */
+        flex-direction: column; /* Меняем направление на колонку для меньших экранов */
+        align-items: center; /* Центрируем элементы по горизонтали */
+    }
+    
+    .container img {
+        width: 70%; /* Увеличиваем ширину изображения */
+        max-width: none; /* Убираем ограничение по максимальной ширине */
+    }
+
+    .content-text p {
+        font-size: 16px; /* Уменьшаем размер шрифта */
+    }
+
+    .content-button .price {
+        font-size: 1.8em; /* Уменьшаем размер шрифта цены */
+    }
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Уменьшаем отступы */
+        gap: 15px; /* Уменьшаем расстояние между элементами */
+    }
+
+    .content-text p {
+        font-size: 14px; /* Уменьшаем размер шрифта */
+    }
+
+    .content-button .price {
+        font-size: 1.6em; /* Уменьшаем размер шрифта цены */
+    }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px; /* Уменьшаем отступы */
+        gap: 10px; /* Уменьшаем расстояние между элементами */
+        flex-direction: column; /* Оставляем колонку для мобильных устройств */
+        align-items: stretch; /* Растягиваем элементы по ширине контейнера */
+    }
+
+    .container img {
+        width: 100%; /* Ширина изображения на весь экран */
+        max-width: none; /* Убираем ограничение по максимальной ширине */
+        height: auto; /* Высота автоматически подстраивается под ширину */
+    }
+
+    .content-text p {
+        font-size: 12px; /* Уменьшаем размер шрифта */
+    }
+
+    .content-button .price {
+        font-size: 1.4em; /* Уменьшаем размер шрифта цены */
+    }
+}
+/* Адаптация для 320px */
+@media (max-width: 320px) {
+    .container {
+        padding: 10px; /* Минимальные отступы */
+        gap: 5px; /* Минимальное расстояние между элементами */
+    }
+
+    .content-text p {
+        font-size: 10px; /* Минимальный размер шрифта */
+    }
+
+    .content-button .price {
+        font-size: 1.2em; /* Минимальный размер шрифта цены */
+    }
+}
+
+
+
+
+
+
+.text{
+    margin: 100px 0;
+}
+
+.reviews {
+    /* Если вы хотите 4 колонки по 300px, то max-width нужно будет увеличить до ~1300px.
+       Но если 4 колонки должны помещаться в текущие 1000px, то карточки станут уже. */
+    max-width: auto; /* Ограничиваем максимальную ширину блока отзывов для лучшей читаемости */
+    margin: 10px auto; /* Отступы сверху/снизу и центрирование блока на странице */
+    padding: 0 20px; /* Внутренние отступы по бокам, чтобы отзывы не прилипали к краям экрана на маленьких устройствах */
+
+    display: grid; /* Используем Grid для гибкой сетки отзывов */
+    /* Создаем адаптивные колонки:
+       - auto-fit: автоматически подстраивает количество колонок под доступное пространство
+       - minmax(225px, 1fr): КАЖДАЯ КОЛОНКА ТЕПЕРЬ МИНИМУМ 225PX.
+         Это позволит 4 колонкам уместиться в 1000px (4*225 + 3*30 = 900+90=990px) */
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 30px; /* Расстояние между отдельными карточками отзывов */
+}
+
+.comment {
+    background-color: #fff; /* Белый фон для каждой карточки отзыва */
+    padding: 25px; /* Внутренние отступы внутри каждой карточки */
+    border-radius: 10px; /* Скругленные углы карточки */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Легкая тень для эффекта "поднятой" карточки */
+    display: flex; /* Flexbox для содержимого отзыва (имя, дата/рейтинг, текст) */
+    flex-direction: column; /* Элементы внутри отзыва будут располагаться друг под другом */
+    transition: transform 0.2s ease-in-out; /* Плавная анимация при наведении */
+}
+
+.comment:hover {
+    transform: translateY(-5px); /* Небольшой подъем карточки при наведении */
+}
+.comment h3{
+    font-size: 20px;
+}
+.comment p{
+    font-size: 10px;
+    text-align: justify;
+}
+/* Стили для первого p-тега (который у вас пустой) - можно использовать для даты, рейтинга и т.п. */
+.comment p:nth-of-type(1) {
+    font-size: 0.9em; /* Чуть меньший шрифт для этой строки */
+    color: #888; /* Более светлый цвет для дополнительной информации */
+    margin-top: 0;
+    margin-bottom: 15px; /* Отступ между метаданными (если появятся) и текстом отзыва */
+    min-height: 1em; /* Зарезервировать минимальную высоту, чтобы верстка не "прыгала", если текст там появится */
+    /* display: none; */ /* Раскомментируйте, если хотите полностью скрыть */
+}
+
+/* Стили для второго p-тега (основной текст отзыва) */
+.comment p:nth-of-type(2) {
+    font-size: 1em; /* Размер основного текста отзыва */
+    color: #555; /* Средне-серый цвет */
+    line-height: 1.6; /* Межстрочный интервал для лучшей читаемости */
+    margin-top: 0; /* Убираем стандартный верхний отступ */
+    margin-bottom: 0; /* Убираем стандартный нижний отступ */
+}
+
+.comment.hidden {
+            display: none;
+        }
+
+/* Ваш CSS-код, который вы предоставили */
+.show-more, .leave-a-review {
+  margin-top: 10px;
+  padding-top: 30px;
+}
+
+#showMoreButton {
+text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* Адаптация для 1200px */
+@media (max-width: 1200px) {
+    .text {
+        margin: 80px 0; /* Уменьшаем отступы */
+    }
+
+    .reviews {
+        gap: 25px; /* Уменьшаем расстояние между карточками */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Меняем минимальный размер колонок */
+    }
+
+    .comment h3 {
+        font-size: 18px; /* Уменьшаем размер заголовка */
+    }
+
+    .comment p {
+        font-size: 9px; /* Уменьшаем размер текста отзыва */
+    }
+}
+
+/* Адаптация для 1024px */
+@media (max-width: 1024px) {
+    .text {
+        margin: 60px 0; /* Уменьшаем отступы */
+    }
+
+    .reviews {
+        gap: 20px; /* Уменьшаем расстояние между карточками */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Меняем минимальный размер колонок */
+    }
+
+    .comment h3 {
+        font-size: 16px; /* Уменьшаем размер заголовка */
+    }
+
+    .comment p {
+        font-size: 8px; /* Уменьшаем размер текста отзыва */
+    }
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    .text {
+        margin: 40px 0; /* Уменьшаем отступы */
+    }
+
+    .reviews {
+        gap: 15px; /* Уменьшаем расстояние между карточками */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Меняем минимальный размер колонок */
+    }
+
+    .comment h3 {
+        font-size: 14px; /* Уменьшаем размер заголовка */
+    }
+
+    .comment p {
+        font-size: 7px; /* Уменьшаем размер текста отзыва */
+    }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+    .text {
+        margin: 20px 0; /* Уменьшаем отступы */
+    }
+
+    .reviews {
+        gap: 10px; /* Уменьшаем расстояние между карточками */
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Меняем минимальный размер колонок */
+    }
+
+    .comment h3 {
+        font-size: 12px; /* Уменьшаем размер заголовка */
+    }
+
+    .comment p {
+        font-size: 6px; /* Уменьшаем размер текста отзыва */
+    }
+}
+
+/* Адаптация для 320px */
+@media (max-width: 320px) {
+    .text {
+        margin: 10px 0; /* Минимальные отступы */
+    }
+
+    .reviews {
+        gap: 5px; /* Минимальное расстояние между карточками */
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Меняем минимальный размер колонок */
+    }
+
+    .comment h3 {
+        font-size: 10px; /* Минимальный размер заголовка */
+    }
+
+    .comment p {
+        font-size: 5px; /* Минимальный размер текста отзыва */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    margin-top: 90px;
+    width: auto;
+    height: 200px;
+    background-color: #A68B64;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+footer h3{
+    color: #D0BBA0;
+}
+footer .menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0 80px;
+    margin: 0;
+}
+
+footer .menu ul li a { 
+    padding: 0 20px;
+    text-decoration: none;
+    color: #D0BBA0;
+    display: block; 
+
+}
+/* Медиа-запросы для адаптации стилей */
+
+/* Для экранов шириной до 1200px */
+@media (max-width: 1200px) {
+    footer {
+        height: 210px; /* Уменьшаем высоту */
+    }
+
+    footer .menu ul {
+        padding: 0 60px; /* Уменьшаем боковые отступы */
+    }
+}
+
+/* Для экранов шириной до 1024px */
+@media (max-width: 1024px) {
+    footer {
+        height: 190px; /* Уменьшаем высоту */
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    footer .menu ul {
+        padding: 0; /* Убираем боковые отступы */
+        margin-top: 10px; /* Добавляем отступ сверху */
+    }
+
+    footer .menu ul li a {
+        padding: 10px 0; /* Увеличиваем вертикальные отступы */
+    }
+}
+
+/* Для экранов шириной до 768px */
+@media (max-width: 768px) {
+    footer {
+        height: 170px; /* Уменьшаем высоту */
+    }
+
+    footer h3 {
+        font-size: 18px; /* Уменьшаем размер заголовка */
+    }
+
+    footer .menu ul li a {
+        padding: 5px 0; /* Уменьшаем вертикальные отступы */
+        font-size: 14px; /* Уменьшаем размер текста */
+    }
+}
+
+/* Для экранов шириной до 480px */
+@media (max-width: 480px) {
+    footer {
+        height: 170px; /* Уменьшаем высоту */
+    }
+
+    footer h3 {
+        font-size: 16px; /* Уменьшаем размер заголовка */
+    }
+
+    footer .menu ul {
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    footer .menu ul li a {
+        padding: 5px 0; /* Увеличиваем вертикальные отступы */
+        font-size: 12px; /* Уменьшаем размер текста */
+    }
+}
+
+/* Для экранов шириной до 320px */
+@media (max-width: 320px) {
+    footer {
+        height: auto; /* Позволяем высоте адаптироваться */
+        padding: 10px; /* Добавляем внутренние отступы */
+    }
+
+    footer h3 {
+        font-size: 14px; /* Уменьшаем размер заголовка */
+        text-align: center; /* Центрируем заголовок */
+    }
+
+    footer .menu ul li a {
+        font-size: 10px; /* Уменьшаем размер текста */
+    }
+}
+
+
+
+
+
+
+
+
+.cart-notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /*  Полупрозрачный фон */
+  display: none; /*  Скрываем по умолчанию */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /*  Отображаем поверх всего */
+}
+
+.cart-notification-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+/* Адаптация для 1200px */
+@media (max-width: 1200px) {
+    .cart-notification-content {
+        width: 40%; /* Устанавливаем ширину для больших экранов */
+        max-width: 600px; /* Максимальная ширина */
+    }
+}
+
+/* Адаптация для 1024px */
+@media (max-width: 1024px) {
+    .cart-notification-content {
+        width: 50%; /* Устанавливаем ширину для средних экранов */
+        padding: 15px; /* Уменьшаем отступы */
+    }
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    .cart-notification-content {
+        width: 70%; /* Устанавливаем ширину для планшетов */
+        padding: 10px; /* Уменьшаем отступы */
+    }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+    .cart-notification-content {
+        width: 90%; /* Устанавливаем ширину для мобильных устройств */
+        padding: 10px; /* Поддерживаем отступы */
+        font-size: 14px; /* Уменьшаем размер шрифта */
+    }
+}
+
+/* Адаптация для 320px */
+@media (max-width: 320px) {
+    .cart-notification-content {
+        width: 95%; /* Устанавливаем ширину для очень маленьких экранов */
+        padding: 8px; /* Уменьшаем отступы */
+        font-size: 12px; /* Уменьшаем размер шрифта еще больше */
+    }
+}
+
+
+
