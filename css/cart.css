@@ -1,0 +1,519 @@
+body {
+    background-color: rgb(243, 235, 220);
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: #A68B64;
+    font-size: 28px;
+}
+
+p {
+    color: #4A4A4A;
+    font-size: 16px;
+}
+
+button {
+    background: #E0CBA8;
+    color: #A68B64;
+    width: 245px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer; 
+}
+
+button:hover {
+    background: #D0BBA0; 
+    color: #866B44;   
+}
+/* Адаптация для 1200px */
+@media (max-width: 1200px) {
+    h1, h2, h3 {
+        font-size: 26px; /* Уменьшение размера заголовков */
+    }
+
+    p {
+        font-size: 15px; /* Уменьшение размера текста */
+    }
+
+    button {
+        width: 220px; /* Уменьшение ширины кнопки */
+        font-size: 15px; /* Уменьшение размера шрифта кнопки */
+    }
+}
+
+/* Адаптация для 1024px */
+@media (max-width: 1024px) {
+    h1, h2, h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        width: 200px;
+        font-size: 14px;
+    }
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    button {
+        width: 160px;
+        font-size: 13px;
+        height: 35px; /* Уменьшение высоты кнопки */
+    }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    button {
+        width: 140px;
+        font-size: 12px;
+        height: 30px; /* Уменьшение высоты кнопки */
+    }
+}
+
+/* Адаптация для 320px */
+@media (max-width: 320px) {
+    h1, h2, h3 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 11px;
+    }
+
+    button {
+        width: 120px;
+        font-size: 11px;
+        height: 28px; /* Уменьшение высоты кнопки */
+    }
+}
+
+
+
+header {
+    padding: 60px 40px 10px;
+    position: relative;
+    overflow: visible; /* Изменено: отключаем обрезку содержимого */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Фиксируем навигацию */
+    top: 0; /* Прикрепляем к верху экрана */
+    left: 0; /* Прикрепляем к левому краю экрана */
+    width: 100%; /* Навигация занимает всю ширину экрана */
+    height: 50px;
+    background-color: #fff; /* Задаем фон для навигации (непрозрачный) */
+    z-index: 100; /* Устанавливаем высокий z-index, чтобы навигация была поверх всего контента */
+    padding: 10px 20px; /* Добавляем отступы сверху и снизу, слева и справа */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень для визуального выделения */
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+}
+
+nav .menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0 80px;
+    margin: 0;
+    justify-content: space-between;
+
+}
+
+nav .menu ul li a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #A68B64;
+    display: block;
+}
+
+nav .menu ul li a:hover {
+    color: #866B44;
+}
+
+nav .nav-button {
+    display: flex;
+    align-items: center;
+    padding-left: 380px;
+}
+
+nav .nav-button img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+nav .nav-button button {
+    width: 180px;
+}
+.menu ul.active {
+        display: block; /* Показываем меню при добавлении класса active */
+    }
+
+nav .menu ul.hidden {
+    display: none; 
+}
+
+.burger-menu {
+    display: none; 
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #A68B64;
+    margin: 5px 0;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Адаптация для 1200px */
+@media (max-width: 1200px) {
+    nav .menu ul {
+        padding: 0 40px; /* Уменьшаем отступы */
+    }
+
+    nav .nav-button {
+        padding-left: 200px; /* Уменьшаем отступ для кнопки */
+    }
+
+    nav .menu h3 {
+        font-size: 18px; /* Уменьшаем размер заголовка */
+    }
+}
+
+/* Адаптация для 1024px */
+@media (max-width: 1024px) {
+    nav .menu ul {
+        padding: 0 20px; /* Уменьшаем отступы */
+        justify-content: center; /* Центрируем элементы меню */
+    }
+
+    nav .nav-button {
+        padding-left: 150px; /* Уменьшаем отступ для кнопки */
+    }
+
+    nav .menu h3 {
+        font-size: 16px; /* Уменьшаем размер заголовка */
+    }
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    nav .menu ul {
+        flex-direction: column; /* Меню становится вертикальным */
+        padding: 0; /* Убираем отступы */
+        align-items: center; /* Центрируем элементы меню */
+        position: absolute; /* Абсолютное позиционирование для выпадающего меню */
+        top: 50px; /* Сдвигаем вниз под навигацию */
+        left: 0; 
+        right: 0; 
+        background-color: #fff; /* Фон для выпадающего меню */
+        z-index: -1; /* Помещаем под другие элементы */
+        display: none; /* Скрываем по умолчанию */
+    }
+
+    nav .burger-menu {
+        display: block; /* Показываем бургер-меню */
+        margin-left: auto; /* Выравниваем бургер в конце навигации */
+        padding-right: 20px; /* Отступ справа */
+    }
+
+    nav .nav-button {
+        padding-left: 0; /* Убираем отступ для кнопки */
+        margin-left: auto; /* Выравниваем кнопку вправо */
+    }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+    nav .menu h3 {
+        font-size: 14px; /* Уменьшаем размер заголовка */
+    }
+
+    nav .nav-button button {
+        width: 150px; /* Уменьшаем ширину кнопки */
+    }
+
+    nav .burger-menu .bar {
+        width: 20px; /* Уменьшаем ширину полосок бургер-меню */
+        height: 2px; /* Уменьшаем высоту полосок бургер-меню */
+    }
+}
+
+/* Адаптация для 320px */
+@media (max-width: 320px) {
+    nav .menu h3 {
+        font-size: 12px; /* Уменьшаем размер заголовка */
+    }
+
+    nav .nav-button button {
+        width: 120px; /* Уменьшаем ширину кнопки */
+    }
+
+    nav .burger-menu .bar {
+        width: 15px; /* Уменьшаем ширину полосок бургер-меню */
+        height: 2px; /* Уменьшаем высоту полосок бургер-меню */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px;
+        margin: 60px 40px;
+        padding: 40px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 100px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+#cart-total {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: right;
+}
+
+#checkout-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#checkout-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+.link{
+    margin: 20px 40px;
+}
+
+.back-link {
+    display: inline-flex;
+    color: #A68B64; /* Используем flexbox, чтобы иконка и текст были рядом и выровнены */
+    align-items: center; /* Выравниваем по центру по вертикали */
+    gap: 8px; /* Расстояние между иконкой и текстом */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    font-size: 1.1em; /* Размер шрифта */
+    font-weight: 500; /* Полужирный шрифт */
+    margin-bottom: 30px; /* Отступ снизу от основного блока товара */
+    padding: 8px 12px; /* Внутренние отступы для области клика */
+    transition: all 0.3s ease; /* Плавный переход для hover-эффектов */
+}
+
+.back-link:hover {
+    background: #E0CBA8; 
+    color: #866B44;   
+    transform: translateX(-3px); /* Небольшое смещение влево при наведении для эффекта "движения" */
+}
+
+.back-link i {
+    font-size: 1.3em; /* Увеличиваем размер иконки стрелки */
+    line-height: 1; /* Гарантируем, что иконка не будет добавлять лишней высоты */
+}
+/* Медиа-запросы для адаптации */
+@media (max-width: 1200px) {
+    .container {
+        margin: 40px; /* Уменьшаем отступы */
+        padding: 30px; /* Уменьшаем внутренние отступы */
+    }
+
+    .cart-item img {
+        width: 90px; /* Уменьшаем размер изображения товара */
+    }
+
+    #checkout-button {
+        width: auto; /* Автоматическая ширина для кнопки */
+        padding: 8px; /* Уменьшение внутреннего отступа */
+    }
+
+    .cart-item-title {
+        font-size: 0.9em; /* Уменьшаем размер шрифта названия товара */
+    }
+
+    .quantity-buttons button {
+        font-size: 0.8em; /* Уменьшаем размер шрифта для кнопок + и - */
+        padding: 5px; /* Уменьшаем внутренние отступы кнопок */
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin: 30px; /* Уменьшаем отступы */
+        padding: 25px; /* Уменьшаем внутренние отступы */
+    }
+
+    .cart-item img {
+        width: 80px; /* Уменьшаем размер изображения товара */
+        margin-right: 15px; /* Уменьшаем отступ справа от изображения */
+    }
+
+    .back-link {
+        font-size: 1em; /* Уменьшаем размер шрифта для ссылки */
+        padding: 6px 10px; /* Уменьшаем внутренние отступы */
+    }
+
+    .cart-item-title {
+        font-size: 0.60em; /* Уменьшаем размер шрифта названия товара */
+    }
+
+    .quantity-buttons button {
+        font-size: 0.75em; /* Уменьшаем размер шрифта для кнопок + и - */
+        padding: 4px; /* Уменьшаем внутренние отступы кнопок */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px; /* Уменьшаем отступы */
+        padding: 20px; /* Уменьшаем внутренние отступы */
+        max-width: 100%; /* Увеличиваем ширину контейнера на меньших экранах */
+    }
+
+    .cart-item img {
+        width: 70px; /* Уменьшаем размер изображения товара */
+        margin-right: 10px; /* Уменьшаем отступ справа от изображения */
+    }
+
+    #checkout-button {
+        width: auto; /* Автоматическая ширина для кнопки */
+        padding: 8px; /* Уменьшение внутреннего отступа */
+        font-size: 0.9em; /* Уменьшение размера шрифта для кнопки */
+    }
+
+    .cart-item-title {
+        font-size: 0.6em; /* Уменьшаем размер шрифта названия товара */
+    }
+
+    .quantity-buttons button {
+        font-size: 0.7em; /* Уменьшаем размер шрифта для кнопок + и - */
+        padding: 3px; /* Уменьшаем внутренние отступы кнопок */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px; /* Уменьшаем отступы */
+        padding: 15px; /* Уменьшаем внутренние отступы */
+        max-width: 100%; /* Полная ширина контейнера */
+    }
+
+    .cart-item img {
+        width: 60px; /* Уменьшаем размер изображения товара */
+        margin-right: 5px; /* Уменьшаем отступ справа от изображения */
+    }
+
+    .back-link {
+        font-size: 0.9em; /* Уменьшаем размер шрифта для ссылки */
+        padding: 5px; /* Уменьшение внутренних отступов */
+    }
+
+    .cart-item-title {
+        font-size: 0.75em; /* Уменьшаем размер шрифта названия товара */
+    }
+
+    .quantity-buttons button {
+        font-size: 0.6em; /* Уменьшаем размер шрифта для кнопок + и - */
+        padding: 2px; /* Уменьшаем внутренние отступы кнопок */
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        padding: 10px; /* Минимальные внутренние отступы */
+        max-width: 100%; /* Полная ширина контейнера */
+        margin: 5px; /* Минимальные внешние отступы */
+    }
+
+    .cart-item img {
+        width: 50px; /* Минимальный размер изображения товара */
+        margin-right: 5px; /* Минимальные отступы справа от изображения */
+    }
+
+    .back-link {
+        font-size: 0.7em; /* Минимальный размер шрифта для ссылки */
+        padding: 4px; /* Минимальные внутренние отступы */
+    }
+
+    .cart-item-title {
+        font-size: 0.5em; /* Минимальный размер шрифта названия товара */
+    }
+
+    .quantity-buttons button {
+                font-size: 0.5em; /* Минимальный размер шрифта для кнопок + и - */
+        padding: 1px; /* Минимальные внутренние отступы кнопок */
+    }
+}

@@ -1,0 +1,348 @@
+body {
+    background-color: rgb(243, 235, 220);
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    font-family: 'Playfair Display', serif;
+    color: #A68B64;
+    font-size: 28px;
+    padding: 20px 60px;
+}
+
+
+.link{
+    margin: 20px 40px;
+}
+
+.back-link {
+    display: inline-flex;
+    color: #A68B64; /* Используем flexbox, чтобы иконка и текст были рядом и выровнены */
+    align-items: center; /* Выравниваем по центру по вертикали */
+    gap: 8px; /* Расстояние между иконкой и текстом */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    font-size: 1.1em; /* Размер шрифта */
+    font-weight: 500; /* Полужирный шрифт */
+    margin-bottom: 30px; /* Отступ снизу от основного блока товара */
+    padding: 8px 12px; /* Внутренние отступы для области клика */
+    transition: all 0.3s ease; /* Плавный переход для hover-эффектов */
+}
+
+.back-link:hover {
+    background: #E0CBA8; 
+    color: #866B44;   
+    transform: translateX(-3px); /* Небольшое смещение влево при наведении для эффекта "движения" */
+}
+
+.back-link i {
+    font-size: 1.3em; /* Увеличиваем размер иконки стрелки */
+    line-height: 1; /* Гарантируем, что иконка не будет добавлять лишней высоты */
+}
+/* Адаптация для различных разрешений */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 24px; /* Уменьшаем размер заголовка */
+        padding: 20px 40px; /* Уменьшаем внутренние отступы */
+    }
+
+    .back-link {
+        font-size: 1em; /* Уменьшаем размер шрифта ссылки */
+        padding: 6px 10px; /* Уменьшаем внутренние отступы */
+        margin-bottom: 25px; /* Уменьшаем отступ снизу */
+    }
+
+    .back-link i {
+        font-size: 1.2em; /* Уменьшаем размер иконки стрелки */
+    }
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 22px; /* Еще меньше размер заголовка */
+        padding: 20px 30px; /* Уменьшаем внутренние отступы */
+    }
+
+    .back-link {
+        font-size: 0.9em; /* Уменьшаем размер шрифта ссылки */
+        padding: 5px 8px; /* Уменьшаем внутренние отступы */
+        margin-bottom: 20px; /* Уменьшаем отступ снизу */
+    }
+
+    .back-link i {
+        font-size: 1.1em; /* Уменьшаем размер иконки стрелки */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px; /* Еще меньше размер заголовка */
+        padding: 15px 20px; /* Уменьшаем внутренние отступы */
+    }
+
+    .back-link {
+        font-size: 0.8em; /* Уменьшаем размер шрифта ссылки */
+        padding: 4px 6px; /* Уменьшаем внутренние отступы */
+        margin-bottom: 15px; /* Уменьшаем отступ снизу */
+    }
+
+    .back-link i {
+        font-size: 1em; /* Уменьшаем размер иконки стрелки */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px; /* Минимальный размер заголовка */
+        padding: 10px 15px; /* Минимальные внутренние отступы */
+    }
+
+    .back-link {
+        font-size: 0.7em; /* Минимальный размер шрифта ссылки */
+        padding: 3px 5px; /* Минимальные внутренние отступы */
+        margin-bottom: 10px; /* Минимальный отступ снизу */
+    }
+
+    .back-link i {
+        font-size: 0.9em; /* Минимальный размер иконки стрелки */
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 16px; /* Минимальный размер заголовка */
+        padding: 5px 10px; /* Минимальные внутренние отступы */
+    }
+
+    .back-link {
+        font-size: 0.6em; /* Минимальный размер шрифта ссылки */
+        padding: 2px 4px; /* Минимальные внутренние отступы */
+        margin-bottom: 5px; /* Минимальный отступ снизу */
+    }
+
+    .back-link i {
+        font-size: 0.8em; /* Минимальный размер иконки стрелки */
+    }
+}
+
+
+
+
+
+
+
+.rating {
+  display: inline-block;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > input {
+  display: none;
+}
+.rating > label {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  font-size: 2em; /* Размер звезд */
+  color: #ddd;
+  cursor: pointer;
+}
+.rating > label:before {
+  content: "\2605"; /* Звезда Unicode */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rating > input:checked ~ label {
+  color: #FFD700; /* Золотой цвет */
+}
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #FFD700; /* Золотой цвет */
+}
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #FFED85; /* Более светлый золотой цвет */
+}
+/* Адаптация для различных разрешений */
+@media (max-width: 1200px) {
+    .rating > label {
+        font-size: 1.8em; /* Уменьшаем размер звезд */
+    }
+}
+
+@media (max-width: 1024px) {
+    .rating > label {
+        font-size: 1.8em; /* Еще меньше размер звезд */
+    }
+}
+
+@media (max-width: 768px) {
+    .rating > label {
+        font-size: 1.6em; /* Уменьшаем размер звезд */
+    }
+}
+
+@media (max-width: 480px) {
+    .rating > label {
+        font-size: 1.6em; /* Минимальный размер звезд */
+    }
+}
+
+@media (max-width: 320px) {
+    .rating > label {
+        font-size: 1.4em; /* Минимальный размер звезд */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Общие стили для формы */
+form {
+  width: 50%;
+  background-color: #fff; /* Белый фон, как запрошено */
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  padding: 50px; /* Отступы внутри контейнера */
+  border-radius: 10px; /* Скругленные углы */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Легкая тень */
+
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 10px;
+  font-family: 'Playfair Display', serif;
+    color: #A68B64;
+    font-size: 20px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Скругленные углы */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Легкая тень */
+
+}
+
+input[type="submit"] {
+ background: #E0CBA8;
+    color: #A68B64;
+    width: 245px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer; 
+}
+
+input[type="submit"]:hover {
+  background: #D0BBA0; 
+    color: #866B44;   
+}
+/* Адаптация для различных разрешений */
+@media (max-width: 1200px) {
+    form {
+        width: 60%; /* Ширина формы увеличивается на меньших экранах */
+        padding: 40px; /* Уменьшаем внутренние отступы */
+    }
+
+    label {
+        font-size: 20px; /* Уменьшаем размер шрифта для меток */
+    }
+
+    input[type="submit"] {
+        width: 220px; /* Уменьшаем ширину кнопки */
+        height: 38px; /* Уменьшаем высоту кнопки */
+        font-size: 18px; /* Уменьшаем размер шрифта кнопки */
+    }
+}
+
+@media (max-width: 1024px) {
+    form {
+        width: 70%; /* Ширина формы увеличивается на меньших экранах */
+        padding: 30px; /* Уменьшаем внутренние отступы */
+    }
+
+    label {
+        font-size: 19px; /* Уменьшаем размер шрифта для меток */
+    }
+
+    input[type="submit"] {
+        width: 200px; /* Уменьшаем ширину кнопки */
+        height: 36px; /* Уменьшаем высоту кнопки */
+        font-size: 17px; /* Уменьшаем размер шрифта кнопки */
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 80%; /* Ширина формы увеличивается на меньших экранах */
+        padding: 20px; /* Уменьшаем внутренние отступы */
+    }
+
+    label {
+        font-size: 18px; /* Уменьшаем размер шрифта для меток */
+    }
+
+    input[type="submit"] {
+        width: 180px; /* Уменьшаем ширину кнопки */
+        height: 34px; /* Уменьшаем высоту кнопки */
+        font-size: 16px; /* Уменьшаем размер шрифта кнопки */
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 90%; /* Ширина формы увеличивается на меньших экранах */
+        padding: 15px; /* Уменьшаем внутренние отступы */
+    }
+
+    label {
+        font-size: 18px; /* Уменьшаем размер шрифта для меток */
+    }
+
+    input[type="submit"] {
+        width: 160px; /* Уменьшаем ширину кнопки */
+        height: 32px; /* Уменьшаем высоту кнопки */
+        font-size: 19px; /* Уменьшаем размер шрифта кнопки */
+    }
+}
+
+@media (max-width: 320px) {
+    form {
+        width: 95%; /* Ширина формы увеличивается на меньших экранах */
+        padding: 10px; /* Уменьшаем внутренние отступы */
+    }
+
+    label {
+        font-size: 18px; /* Уменьшаем размер шрифта для меток */
+    }
+
+    input[type="submit"] {
+        width: 140px; /* Уменьшаем ширину кнопки */
+        height: 30px; /* Уменьшаем высоту кнопки */
+        font-size: 16px; /* Уменьшаем размер шрифта кнопки */
+    }
+}

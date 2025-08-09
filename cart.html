@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="css/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu">
+                <h3>HomeHarmony</h3>
+                <ul>
+                    <li><a href="index.html #main">Главная</a></li>
+                    <li><a href="catalog.php">Каталог</a></li>
+                    <li><a href="index.html">О нас</a></li>
+                    <li><a href="index.html">Контакты</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </header>
+
+   <div class="link">
+  <a href="javascript:history.back()" class="back-link">
+    <span>Назад</span>
+  </a>
+</div>
+
+    <div class="container">
+        <h1>Корзина</h1>
+        <div id="cart-items">
+            <!--  Здесь будет отображаться содержимое корзины -->
+        </div>
+        <div id="cart-total">
+            <!--  Здесь будет отображаться общая стоимость -->
+        </div>
+        <button id="checkout-button" onclick="location.href='catalog.php'">Оформить заказ</button>
+    </div>
+
+    <script src="js/cart.js"></script>
+    <script src="js/cart_page.js"></script>
+</body>
+</html>
